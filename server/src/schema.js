@@ -1,8 +1,8 @@
-const gql = require('graphql-tag');
+const gql = require("graphql-tag");
 
 const typeDefs = gql`
   type Query {
-    "Query to get tracks array for the homepage grid"
+    "Get tracks array for homepage grid"
     tracksForHome: [Track!]!
   }
 
@@ -11,9 +11,9 @@ const typeDefs = gql`
     id: ID!
     "The track's title"
     title: String!
-    "The track's main Author"
+    "The track's main author"
     author: Author!
-    "The track's illustration to display in track card or track page detail"
+    "The track's main illustration to display in track card or track page detail"
     thumbnail: String
     "The track's approximate length to complete, in minutes"
     length: Int
@@ -21,14 +21,13 @@ const typeDefs = gql`
     modulesCount: Int
   }
 
-  "Author of a complete Track or a Module"
+  "Author of a complete Track"
   type Author {
     id: ID!
     "Author's first and last name"
     name: String!
-    "Author's profile picture"
+    "Author's profile picture url"
     photo: String
   }
 `;
-
 module.exports = typeDefs;
